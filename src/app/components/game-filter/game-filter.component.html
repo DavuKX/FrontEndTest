@@ -1,0 +1,25 @@
+<form (ngSubmit)="applyFilters()" class="game-filter-form p-2">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <label for="searchName">Search by name:</label>
+      <input type="text" class="form-control" id="searchName" [(ngModel)]="nameFilter" name="nameFilter">
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <label for="genreFilter">Search by genre:</label>
+      <select class="form-control" id="genreFilter" [(ngModel)]="genreFilter" name="genreFilter">
+        <option value="">All</option>
+        <option *ngFor="let genre of genres" [value]="genre">{{ genre | titlecase }}</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <label for="platformFilter">Search by platform:</label>
+      <select class="form-control" id="platformFilter" [(ngModel)]="platformFilter" name="platformFilter">
+        <option value="">All</option>
+        <option *ngFor="let platform of platforms" [value]="platform">{{ platform | titlecase }}</option>
+      </select>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 p-4">
+      <button type="submit" class="btn btn-primary">Apply filters</button>
+    </div>
+  </div>
+</form>

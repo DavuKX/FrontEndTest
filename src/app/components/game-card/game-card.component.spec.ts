@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GameCardComponent } from './game-card.component';
 import { By } from '@angular/platform-browser';
 import { TruncatePipe} from "../../pipes/truncate/truncate.pipe";
-import { Game } from '../interfaces/game.interface';
+import { Game } from '../../interfaces/game.interface';
 
 describe('GameCardComponent', () => {
   let component: GameCardComponent;

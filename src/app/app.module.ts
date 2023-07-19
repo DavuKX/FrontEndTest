@@ -10,6 +10,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { TruncatePipe } from './pipes/truncate/truncate.pipe';
 import { GameDetailComponent } from './components/game-detail/game-detail.component';
+import { GameFilterComponent } from './components/game-filter/game-filter.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { GameDetailComponent } from './components/game-detail/game-detail.compon
     GameListComponent,
     GameCardComponent,
     TruncatePipe,
-    GameDetailComponent
+    GameDetailComponent,
+    GameFilterComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     RouterOutlet,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

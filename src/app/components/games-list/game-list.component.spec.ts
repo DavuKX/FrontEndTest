@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GameListComponent } from './game-list.component';
 import { ApiService } from '../../services/api.services';
 import { of } from 'rxjs';
-import { Game } from '../interfaces/game.interface';
+import { Game } from '../../interfaces/game.interface';
+import {GameFilter} from "../../interfaces/game-filter.interface";
 
 describe('GameListComponent', () => {
   let component: GameListComponent;
@@ -64,5 +65,23 @@ describe('GameListComponent', () => {
     expect(mockApiService.getGames).toHaveBeenCalled();
     expect(component.games).toEqual(mockGames);
     expect(component.games.length).toBe(2);
+  });
+
+  it('should apply filters correctly', () => {
+    component.games = mockGames;
+    component.filteredGames = mockGames;
+
+    const filters: GameFilter = {
+      name: 'Game 2',
+      genre: 'RPG',
+      platform: 'Console'
+    };
+
+    component.applyFilters(filters);
+
+    expect(component.filteredGames.length).toBeGreaterThan(0);
+    expect(component.filteredGames[0].title.toLowerCase()).toContain(filters.name.toLowerCase());
+    expect(component.filteredGames[0].genre.toLowerCase()).toBe(filters.genre.toLowerCase());
+    expect(component.filteredGames[0].platform.toLowerCase()).toBe(filters.platform.toLowerCase());
   });
 });

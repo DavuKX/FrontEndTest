@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { GameDetailComponent } from './game-detail.component';
 import { ApiService } from '../../services/api.services';
-import { GameDetails } from '../interfaces/game-details.interface';
+import { GameDetails } from '../../interfaces/game-details.interface';
 
 describe('GameDetailComponent', () => {
   let component: GameDetailComponent;
