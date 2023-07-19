@@ -1,0 +1,10 @@
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-bottom: 15px;
+  height: 350px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}

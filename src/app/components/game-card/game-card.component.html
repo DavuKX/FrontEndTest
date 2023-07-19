@@ -1,0 +1,7 @@
+<div class="card" (click)="openModal()">
+  <img [src]="game.thumbnail" class="card-img-top" alt="Game Thumbnail">
+  <div class="card-body">
+    <h5 class="card-title">{{ game.title }}</h5>
+    <p class="card-text">{{ game.short_description | truncate: 20 }}</p>
+  </div>
+</div>
