@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Game } from '../interfaces/game.interface';
 
 @Component({
@@ -9,9 +9,4 @@ import { Game } from '../interfaces/game.interface';
 export class GameCardComponent {
   // @ts-ignore
   @Input() game: Game;
-  @Output() openModalEvent = new EventEmitter<void>();
-
-  openModal() {
-    this.openModalEvent.emit();
-  }
 }

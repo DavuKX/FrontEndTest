@@ -9,13 +9,15 @@ import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { TruncatePipe } from './pipes/truncate/truncate.pipe';
+import { GameDetailComponent } from './components/game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameListComponent,
     GameCardComponent,
-    TruncatePipe
+    TruncatePipe,
+    GameDetailComponent
   ],
   imports: [
     BrowserModule,

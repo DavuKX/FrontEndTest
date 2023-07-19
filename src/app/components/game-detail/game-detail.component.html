@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card mb-3">
+        <div class="card-header text-center">
+          <picture>
+            <source srcset="{{ game.thumbnail }}" media="(max-width: 768px)">
+            <source srcset="{{ game.thumbnail }}?size=500" media="(max-width: 992px)">
+            <img [src]="game.thumbnail" class="img-fluid" alt="Game Thumbnail">
+          </picture>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ game.title }}</h5>
+          <p class="card-text">{{ game.short_description }}</p>
+          <p><strong>Status:</strong> {{ game.status }}</p>
+          <p><strong>Genre:</strong> {{ game.genre }}</p>
+          <p><strong>Developer:</strong> {{ game.developer }}</p>
+          <p><strong>Publisher:</strong> {{ game.publisher }}</p>
+          <p><strong>Release Date:</strong> {{ game.release_date }}</p>
+          <p><strong>Platform:</strong> {{ game.platform }}</p>
+          <p><strong>Description:</strong> {{ game.description }}</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">Minimum System Requirements</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>OS:</strong> {{ game.minimum_system_requirements.os }}</p>
+          <p><strong>Processor:</strong> {{ game.minimum_system_requirements.processor }}</p>
+          <p><strong>Memory:</strong> {{ game.minimum_system_requirements.memory }}</p>
+          <p><strong>Graphics:</strong> {{ game.minimum_system_requirements.graphics }}</p>
+          <p><strong>Storage:</strong> {{ game.minimum_system_requirements.storage }}</p>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-header">
+          <h5 class="mb-0">Screenshots</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 col-sm-6" *ngFor="let screenshot of game.screenshots">
+              <img [src]="screenshot.image" class="img-fluid" alt="Screenshot">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

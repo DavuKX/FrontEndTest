@@ -9,28 +9,17 @@ import {Game} from "../interfaces/game.interface";
 })
 export class GameListComponent implements OnInit {
   games: Game[] = [];
-  selectedGame: Game | undefined;
-  showModal: boolean = false;
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.apiService.getGames().subscribe(
-      (response: any) => {
+      (response: Game[]) => {
         this.games = response;
       },
       (error: any) => {
         console.error('Failed to fetch games:', error)
       }
     )
-  }
-
-  openModal(game: Game) {
-    this.selectedGame = game;
-    this.showModal = true;
-  }
-
-  closeModal() {
-    this.showModal = false;
   }
 }

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GameListComponent} from "./components/games-list/game-list.component";
+import { GameListComponent } from "./components/games-list/game-list.component";
+import { GameDetailComponent } from "./components/game-detail/game-detail.component";
 
 const routes: Routes = [
   { path: '', component: GameListComponent },
-  // Add other routes as needed
+  { path: 'game/:id', component: GameDetailComponent }
 ];
 
 @NgModule({
